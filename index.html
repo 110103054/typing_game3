@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Typing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Typing Game</h1>
+        <div class="controls">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty" aria-label="Select difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="btn-start" class="btn primary" aria-label="Start game">Start</button>
+            <button id="btn-restart" class="btn" aria-label="Restart game" hidden>Restart</button>
+        </div>
+    </header>
+
+    <main class="container" id="game" aria-live="polite">
+        <section class="panel panel-stats" aria-label="Game stats">
+            <div class="stat"><span class="label">Time</span><span id="time">60</span>s</div>
+            <div class="stat"><span class="label">Score</span><span id="score">0</span></div>
+            <div class="stat"><span class="label">WPM</span><span id="wpm">0</span></div>
+            <div class="stat"><span class="label">Accuracy</span><span id="accuracy">100%</span></div>
+        </section>
+
+        <section class="panel panel-word" aria-label="Word to type">
+            <div id="word" class="word" aria-live="assertive">Press Start</div>
+        </section>
+
+        <section class="panel panel-input" aria-label="Typing input">
+            <input id="input" type="text" class="input" placeholder="Type here..." autocomplete="off" autocapitalize="none" spellcheck="false" disabled aria-disabled="true" aria-label="Typing input">
+        </section>
+
+        <section id="result" class="panel panel-result" hidden>
+            <h2>Time's up!</h2>
+            <div class="result-grid">
+                <div><span class="label">Score</span><span id="final-score">0</span></div>
+                <div><span class="label">WPM</span><span id="final-wpm">0</span></div>
+                <div><span class="label">Accuracy</span><span id="final-accuracy">0%</span></div>
+            </div>
+            <button id="btn-play-again" class="btn primary">Play again</button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>Made with ♥</span>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+<!--
+  Static typing game with difficulty selection. No frameworks required.
+-->
+</html>
+
+
